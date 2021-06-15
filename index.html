@@ -1,0 +1,138 @@
+<!dDOCTYPE html>
+<html>
+<head>
+<title>
+Table
+</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<center>
+<table border="4">
+<thead>
+<tr>
+<th>Employee Id</th>
+<td><input type="text" name="employeeid" id="employeeid"> </td>
+</tr>
+<tr>
+<th>First Name</th>
+<td><input type="text" name="fname" id="fname"> </td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>Middle Name</th>
+<td><input type="text" name="mname" id="mname"> </td>
+</tr>
+<tr>
+<th>Last Name</th>
+<td><input type="text" name="lname" id="lname"> </td>
+</tr>
+<tr>
+<th>Email</th>
+<td><input type="text" name="email" id="email"> </td>
+</tr>
+<tr>
+<th>DOB</th>
+<td><input type="date" name="dob" id="dob" max="2001-12-31">
+ </td>
+</tr>
+<tr>
+<th>Gender</th>
+<td><input type="radio" name="gender" id="gender" value="Male" >male</input><input type="radio" name="gender" id="gender" value="Female" >female</input> </td>
+</tr>
+<th>Basic Salary</th>
+<td><input type="text" name="basic_salary" id="basic_salary"> </td>
+</tr>
+<tr><tr>
+<th>Allowances</th>
+<td><input type="text" name="Allowances" id="Allowances"> </td>
+</tr>
+<tr>
+<th>Deduction</th>
+<td><input type="text" name="deduction" id="deduction"> </td>
+</tr>
+<tr>
+<tr>
+<tr id="btn">
+<td colspan="2"><input type="button" name="button" id="btn" value="Submit" onclick="AddRow()"></td>
+</tr>
+</tbody>
+</table>
+<table border="4" id="show">
+<thead>
+<tr>
+<th>Employee Id</th>
+<th>First Name</th>
+<th>Middle Name</th>
+<th>Last Name</th>
+<th>Email</th>
+<th>DOB</th>
+<th>gender</th>
+<th>Basic Salary</th>
+<th>Allowances</th>
+
+<th>Deduction</th>
+<th>Total salary</th>
+</tr>
+</thead>
+</table>
+</center>
+<script>
+var list1 = [];
+var list2 = [];
+var list3 = [];
+var list4 = [];
+var list5 = [];
+var list6 = [];
+var list7 = [];
+var list8 = [];
+var list9 = [];
+var list10=[]
+var list11=[];
+var n=1;
+var x=0;
+function AddRow()
+{
+var AddRown =document.getElementById("show");
+var NewRow=AddRown.insertRow(n);
+list1[x]=document.getElementById("employeeid").value;
+list2[x]=document.getElementById("fname").value;
+list3[x]=document.getElementById("mname").value;
+list4[x]=document.getElementById("lname").value;
+list5[x]=document.getElementById("email").value;
+list6[x]=document.getElementById("dob").value;
+list7[x]=document.getElementById("gender").value;
+list8[x]=parseInt(document.getElementById("basic_salary").value);
+list9[x]=parseInt(document.getElementById("Allowances").value);
+list10[x]=document.getElementById("deduction").value;
+
+var cel1=NewRow.insertCell(0);
+var cel2=NewRow.insertCell(1);
+var cel3=NewRow.insertCell(2);
+var cel4=NewRow.insertCell(3);
+var cel5=NewRow.insertCell(4);
+var cel6=NewRow.insertCell(5);
+var cel7=NewRow.insertCell(6);
+var cel8=NewRow.insertCell(7);
+var cel9=NewRow.insertCell(8);
+var cel10=NewRow.insertCell(9);
+var cel11=NewRow.insertCell(10);
+
+cel1.innerHTML=list1[x];
+cel2.innerHTML=list2[x];
+cel3.innerHTML=list3[x];
+cel4.innerHTML=list4[x];
+cel5.innerHTML=list5[x];
+cel6.innerHTML=list6[x];
+cel7.innerHTML=list7[x];
+cel8.innerHTML=list8[x];
+cel9.innerHTML=list9[x];
+cel10.innerHTML=list10[x];
+cel11.innerHTML=(list8[x]+list9[x]-list10[x]);
+n++;
+x++;
+}
+</script>
+</body>
+</html>
